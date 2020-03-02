@@ -6,9 +6,7 @@ window.onload = function () {
     function addItemToTable () {
         console.log('add item')
         const table = document.getElementById('table')
-        //const currentIndex = table.rows.length
 
-        // inserts a new row at the end of the table
         const currentRow = table.insertRow()
         currentRow.setAttribute('class', 'form-row')
         

@@ -51,32 +51,35 @@
     <!-- sidebar -->
     <!-- inside -->
     <div id="line-items">
-    <div class="form-group">
-        <label for="selectForm">What do you need to complete?</label>
-        <select class="form-control" id="selectForm">
-            <option selected>Choose...</option>
-            <option>Change Order</option>
-            <option>Deposit Withdraw</option>
-        </select>
+        <div class="form-group">
+            <label for="selectForm">What do you need to complete?</label>
+            <select class="form-control" id="selectForm">
+                <option selected>Choose...</option>
+                <option>Change Order</option>
+                <option>Deposit Withdraw</option>
+            </select>
+        </div>
+        <!-- table -->
+        <table class="form-group" id="table">
+            <tr class="form-row">
+                <td class="col-9">
+                    <label for="item-name">Item</label>
+                    <input type="text" class="form-control" id="item-name">
+                </td>
+                <td class="col-3">
+                    <label for="item-name">Amount</label>
+                    <input type="text" class="form-control" id="amount">
+                </td>
+            </tr>
+        </table>
+        <!-- table -->
+        <div class="itemBtnGroup container">
+            <div class="row">
+                <button type="button" class="btn itemBtn " id="addItemBtn">Add item</button>
+                <button type="file" class="btn itemBtn " id="uploadInvoiceBtn">Upload invoice</button>
+            </div>
+        </div>
     </div>
-    <!-- form -->
-    <table class="form-group" id="table">
-        <tr class="form-row">
-            <td class="col-9">
-                <label for="item-name">Item</label>
-                <input type="text" class="form-control" id="item-name">
-            </td>
-            <td class="col-3">
-                <label for="item-name">Amount</label>
-                <input type="text" class="form-control" id="amount">
-            </td>
-        </tr>
-    </table>
-    <div class="itemBtnGroup">
-        <button type="button" class="btn itemBtn" id="addItemBtn">Add item</button>
-        <button type="file" class="btn itemBtn" id="uploadInvoiceBtn">Upload invoice</button>
-    </div>
-</div>
     <!-- inside -->
     <script src="side.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
