@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar {
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    z-index: 1;
+    border-right: 3.5px solid #0016C1;
+}
+
+label {
+    color: #0016C1;
+    font-family: neue-haas-grotesk-display,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
+}
+
+#line-items {
+    margin-left: 40%;
+    padding: 0px 60px;
+}
+
+#submitBtn {
+    background: #0016C1;
+    color: white;
+    font-family: neue-haas-grotesk-display,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
+    border-radius: 0px !important;
+    width: 100%;
+}
+
+.itemBtnGroup {
+    width: 100%;
+}
+
+.itemBtn {
+    background-color: #0016C1;
+    color: white;
+    font-family: neue-haas-grotesk-display,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px !important;
+    border-radius: 0px !important;
+}
+
+.form-control {
+    border-radius: 0px !important;
+    color: #0016C1 !important;
+    border: 3.5px solid #0016C1 !important;
+    padding-left: 20px !important;
+    font-family: neue-haas-grotesk-display,sans-serif !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    font-size: 30px !important;
+}
+
+input[type="text"], input[type="tel"], input[type="email"], option, select {
+    font-family: neue-haas-grotesk-display,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
+}
+
+optgroup {
+    font-family: neue-haas-grotesk-display,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 30px;
+}
+
+#table {
+    width: 100%;
+}
+
+#selectForm {
+
+}
+
+.form {
+    padding: 0px 60px;
+}
