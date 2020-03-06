@@ -19,3 +19,9 @@ body {
     background-color: green;
     text-align: center;
 }
+
+.primary-text {
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    color: var(--red);
+    font-size: 3rem;
+}
