@@ -20,8 +20,33 @@ body {
     text-align: center;
 }
 
+.form-control{
+    border: 1px solid #F54544;
+    border-radius: 0px;
+}
+
+.m-t-10{
+    margin-top: 10px;
+}
+
+.pull-right{
+    float: right;
+    line-height: 40px;
+    margin-right: 20px;
+}
 .primary-text {
     font-family: "neue-haas-grotesk-display", sans-serif;
     color: var(--red);
     font-size: 3rem;
+}
+
+.ItemBtn {
+    background: #F54544;
+    color: white;
+    width: 200px;
+}
+
+.uploadItem{
+    color: #F54544;
+    width: 100%;
 }

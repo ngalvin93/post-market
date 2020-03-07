@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.typekit.net/wfm7wrh.css">
     <link rel="stylesheet" href="form.css">
     <title>Post Market</title>
 </head>
 <body>
-    <div class="col-8">
-    <h2 class="primary-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius, lacus at scelerisque molestie, enim magna faucibus metus, eget porta elit massa a mi. Ut efficitur porta odio, sed porta nisl malesuada quis. Maecenas at est condimentum, cursus felis ac, mattis neque. Praesent tempus elit at consequat blandit.</h2>
+<div class="col-8">
+    <h2 class="primary-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius, lacus at scelerisque
+        molestie, enim magna faucibus metus, eget porta elit massa a mi. Ut efficitur porta odio, sed porta nisl
+        malesuada quis. Maecenas at est condimentum, cursus felis ac, mattis neque. Praesent tempus elit at consequat
+        blandit.</h2>
     <form>
         <h2 class="primary-text">Personal information</h2>
         <div class="form-row">
@@ -25,12 +29,12 @@
         </div>
         <div class="form-row">
             <div class="form-group col-8">
-                <label for="first-name">Email</label>
-                <input type="email" class="form-control" id="first-name">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email">
             </div>
             <div class="form-group col">
-                <label for="last-name">Phone</label>
-                <input type="text" class="form-control" id="last-name">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone">
             </div>
         </div>
         <h2 class="primary-text">Business information</h2>
@@ -60,14 +64,59 @@
             </div>
         </div>
 
-        <div id="changeOrder">
+        <div id="ChooseForm">
+            <h2 class="primary-text">Change order</h2>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="items-table">Item</label>
+
+                    <table class="form-group col-12" id="items-table">
+                        <tr class="form-row">
+                            <td class="col-9">
+                                <input type="text" class="form-control itemNameInput">
+                            </td>
+                            <td class="col-3">
+                                <input type="text" class="form-control itemAmountInput">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="form-row">
+                        <div class="col-9">
+                            <button type="button" class="btn ItemBtn" id="addItemBtn">Add item</button>
+                            <span class="pull-right">Total</span>
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="form-control" id="amountTotal" disabled="disabled">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="items-table">Attach estimates to this form that accompanies each item on the change
+                        order.</label>
+                </div>
+            </div>
+            <div id="uploadFileList">
+            </div>
+            <div class="form-row m-t-10">
+                <div class="col-12">
+                    <button type="button" class="btn ItemBtn" id="uploadBtn">Upload</button>
+                    <input type="file" style="display: none" id="customFile" multiple="multiple" accept=".pdf,.doc,.docx,.jpg,.jepg">
+                </div>
+            </div>
 
         </div>
 
 
-        <button type="submit" class="btn btn-block" id="submit-btn">Submit</button>
+        <button type="submit" class="btn btn-block m-t-10" id="submit-btn">Submit</button>
     </form>
-    </div>
-    <script src="form.js"></script>
+</div>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script src="jquery.mask.min.js"></script>
+<script src="form.js"></script>
 </body>
 </html>
