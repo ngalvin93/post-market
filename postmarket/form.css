@@ -41,8 +41,9 @@ select{
 
 .pull-right{
     float: right;
-    line-height: 40px;
+    line-height: 65px;
     margin-right: 20px;
+    font-size: 30px;
 }
 .primary-text {
     font-family: "neue-haas-grotesk-display", sans-serif;
@@ -53,7 +54,10 @@ select{
 .ItemBtn {
     background: #F54544;
     color: white;
-    width: 200px;
+    width: 215px;
+    height:65px;
+    border-radius: 0px;
+    font-size: 30px;
 }
 
 .uploadItem{

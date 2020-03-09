@@ -76,7 +76,7 @@ function readURL(file) {
         reader.readAsDataURL(file);
         reader.onload = function () {
             fileList[idIndex] = {"name": file.name, file: this.result};
-            $("#uploadFileList").append('<div class="form-control uploadItem m-t-10" id="fileItem' + idIndex + '">' + file.name + '('+formatFileSize(file.size)+')<img src="delete.png" style="width: 16px; float: right; cursor: pointer" onclick="removeFile('+idIndex+')" /></div>');
+            $("#uploadFileList").append('<div class="form-control uploadItem m-t-10" id="fileItem' + idIndex + '">' + file.name + '('+formatFileSize(file.size)+')<img src="delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeFile('+idIndex+')" /></div>');
             fileCount++;
             idIndex++;
 
