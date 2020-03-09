@@ -39,12 +39,28 @@ select{
     margin-top: 10px;
 }
 
+.list-form-group{
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+.form-control:disabled, .form-control[readonly]{
+    background-color: #ffffff;
+}
+
 .pull-right{
     float: right;
     line-height: 65px;
     margin-right: 20px;
     font-size: 30px;
 }
+.pull-right-plus{
+    float: right;
+    margin-right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
 .primary-text {
     font-family: "neue-haas-grotesk-display", sans-serif;
     color: var(--red);
@@ -60,7 +76,19 @@ select{
     font-size: 30px;
 }
 
+.btn{
+    height:65px;
+    border-radius: 0px;
+    font-size: 30px;
+}
+
 .uploadItem{
     color: #F54544;
     width: 100%;
 }
+
+form{
+    margin-bottom: 50px;
+}
+
+
