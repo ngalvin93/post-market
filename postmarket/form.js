@@ -131,6 +131,18 @@ $(function(){
         });
     });
 
+    $('#select-form').change(function () {
+        if($('#select-form').val()=="0"){
+            $("#ChooseForm").hide();
+        }
+        else {
+            $("#choose-title").html($('#select-form').val());
+            $("#ChooseForm").show();
+        }
+    });
+
+
+
 
 
 });

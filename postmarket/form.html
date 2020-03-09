@@ -57,15 +57,15 @@
             <div class="form-group col">
                 <label for="select-form">Select form</label>
                 <select class="form-control" id="select-form">
-                    <option selected>Choose ...</option>
-                    <option>Change order</option>
-                    <option>Deposit withdrawal</option>
+                    <option value="0" selected>Choose ...</option>
+                    <option value="Change order">Change order</option>
+                    <option value="Deposit withdrawal">Deposit withdrawal</option>
                 </select>
             </div>
         </div>
 
-        <div id="ChooseForm">
-            <h2 class="primary-text">Change order</h2>
+        <div id="ChooseForm" style="display: none">
+            <h2 class="primary-text" id="choose-title"></h2>
             <div class="form-row">
                 <div class="form-group col">
                     <label for="items-table">Item</label>
