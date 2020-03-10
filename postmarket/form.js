@@ -133,7 +133,7 @@ function saveForm() {
         type: "POST",
         dataType: "json",
         contentType: "application/json;charset=UTF-8",
-        url: "http://localhost:8342/api/saveform",
+        url: "http://www2.lovettcommercial.com/api/saveform",
         data: JSON.stringify(postData),
         success: function (data) {
             if (data.result == 1) {
