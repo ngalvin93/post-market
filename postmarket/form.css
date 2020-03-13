@@ -60,6 +60,9 @@ select{
     cursor: pointer;
 }
 
+.hero-text {
+    padding: 50px 0;
+}
 
 .primary-text {
     font-family: "neue-haas-grotesk-display", sans-serif;
