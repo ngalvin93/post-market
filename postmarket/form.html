@@ -16,45 +16,49 @@
         malesuada quis. Maecenas at est condimentum, cursus felis ac, mattis neque. Praesent tempus elit at consequat
         blandit.</h2>
     <form>
-        <h2 class="primary-text">Personal information</h2>
-        <div class="form-row">
-            <div class="form-group col">
-                <label for="first-name">First name</label>
-                <input type="text" class="form-control" id="first-name">
+        <h2 class="primary-text group-name">Personal information</h2>
+        <div class="group-div">
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="first-name">First name</label>
+                    <input type="text" class="form-control" id="first-name">
+                </div>
+                <div class="form-group col">
+                    <label for="last-name">Last name</label>
+                    <input type="text" class="form-control" id="last-name">
+                </div>
             </div>
-            <div class="form-group col">
-                <label for="last-name">Last name</label>
-                <input type="text" class="form-control" id="last-name">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-8">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email">
-            </div>
-            <div class="form-group col">
-                <label for="phone">Phone</label>
-                <input type="text" class="form-control" id="phone">
-            </div>
-        </div>
-        <h2 class="primary-text">Business information</h2>
-        <div class="form-row">
-            <div class="form-group col-8">
-                <label for="business-name">Business name</label>
-                <input type="text" class="form-control" id="business-name">
-            </div>
-            <div class="form-group col">
-                <label for="stall-number">Stall/Kiosk #</label>
-                <select class="form-control" id="stall-number">
-                    <option selected>Choose ...</option>
-                    <option>O100</option>
-                    <option>O101</option>
-                </select>
+            <div class="form-row">
+                <div class="form-group col-8">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group col">
+                    <label for="phone">Phone</label>
+                    <input type="text" class="form-control" id="phone">
+                </div>
             </div>
         </div>
-        <h2 class="primary-text">What do you want to submit?</h2>
+        <h2 class="primary-text group-name">Business information</h2>
+        <div class="group-div">
+            <div class="form-row">
+                <div class="form-group col-8">
+                    <label for="business-name">Business name</label>
+                    <input type="text" class="form-control" id="business-name">
+                </div>
+                <div class="form-group col select-element">
+                    <label for="stall-number">Stall/Kiosk #</label>
+                    <select class="form-control" id="stall-number">
+                        <option selected>Choose ...</option>
+                        <option>O100</option>
+                        <option>O101</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <h2 class="primary-text group-name">What do you want to submit?</h2>
         <div class="form-row">
-            <div class="form-group col">
+            <div class="form-group col select-element">
                 <label for="select-form">Select form</label>
                 <select class="form-control" id="select-form">
                     <option value="0" selected>Choose ...</option>
@@ -106,7 +110,6 @@
                     <input type="file" style="display: none" id="customFile" multiple="multiple" accept=".pdf,.doc,.docx,.jpg,.jepg">
                 </div>
             </div>
-
         </div>
 
         <button type="button" class="btn btn-block m-t-10" id="submit-btn">Submit</button>
