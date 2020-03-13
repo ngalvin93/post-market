@@ -48,7 +48,7 @@
                     <label for="business-name">Business name</label>
                     <input type="text" class="form-control" id="business-name">
                 </div>
-                <div class="form-group col-3">
+                <div class="form-group col-3 select-element">
                     <label for="stall-number">Stall/Kiosk #</label>
                     <select class="form-control" id="stall-number">
                         <option selected>Choose ...</option>
@@ -81,11 +81,18 @@
                     <label class="custom-switch-btn" for="Sunday"></label>
                 </div>
             </div>
-            <div class="form-row">
+            <!-- SWITCH -->
+         
+            <label class="switch">
+                <input type="checkbox" class="default">
+                <span class="slider"></span>
+            </label>
+           
+            <!-- <div class="form-row">
                 <div class="form-group col-12">
                     <label></label>
                 </div>
-            </div>
+            </div> -->
             <div class="form-row">
                 <div class="form-group col">
                     <label for="businessDescription">Business description</label>
@@ -110,44 +117,43 @@
             </div>
         </div>
         <h2 class="primary-text group-name">Upload your marketing assets</h2>
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
+        <div class="form-row" style="border-top: 4px solid var(--red);">
             <div class="form-group col list-form-group">
                 <label for="ownerBiography">Owner(s) headshot</label>
-
                 <div class="pull-right-plus">+</div>
              </div>
         </div>
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
+        <div class="form-row" style="border-top: 4px solid var(--red);">
             <div class="form-group col list-form-group">
                 <label for="ownerBiography">Photograph of a dish/product</label>
                 <div class="pull-right-plus">+</div>
             </div>
         </div>
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
+        <div class="form-row" style="border-top: 4px solid var(--red);">
             <div class="form-group col list-form-group">
                 <label for="ownerBiography">Primary photograph</label>
                 <div class="pull-right-plus">+</div>
             </div>
         </div>
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
+        <div class="form-row" style="border-top: 4px solid var(--red);">
             <div class="form-group col list-form-group">
                 <label for="ownerBiography">Secondary photograph</label>
                 <div class="pull-right-plus">+</div>
             </div>
         </div>
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
+        <div class="form-row" style="border-top: 4px solid var(--red);">
             <div class="form-group col list-form-group">
                 <label for="ownerBiography">Logos</label>
                 <div class="pull-right-plus">+</div>
             </div>
         </div>
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
+        <div class="form-row" style="border-top: 4px solid var(--red);">
             <div class="form-group col list-form-group">
                 <label for="ownerBiography">Menu</label>
                 <div class="pull-right-plus">+</div>
             </div>
         </div>
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
+        <div class="form-row" style="border-top: 4px solid var(--red);">
         </div>
         <button type="submit" class="btn btn-block m-t-10" id="submit-btn">Submit</button>
     </form>

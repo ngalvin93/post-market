@@ -1,5 +1,6 @@
 :root {
     --red: #F54544;
+    --disabled: #87888D;
 }
 
 * {
@@ -31,14 +32,6 @@ body {
 
 .form-control:focus {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px var(--red);
-}
-
-select {
-    height: 65px !important;
-    /* Hide dropdown arrow */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
 }
 
 .form-group label {
@@ -113,3 +106,85 @@ select {
 form {
     margin-bottom: 50px;
 }
+
+.select-element::after {
+    content: '>';
+    font: 20px "Consolas", monospace;
+    color: var(--red);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    right: 20px;
+    top: 73px;
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
+}
+
+.select-element select {
+    height: 65px !important;
+    /* Hide dropdown arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    float: right;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    color: white;
+    background: var(--disabled);
+}
+
+/* SWITCH */
+/* Hide default HTML checkbox */
+.switch input {
+    display:none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 128px;
+    height: 67px;
+    /* float:right; */
+}
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--disabled);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 59px;
+    width: 59px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  /* Color of switch when checked */
+  input.default:checked + .slider {
+    background-color: var(--red);
+  }
+  
+  /* Slider transformation/animation */
+  input:checked + .slider:before {
+    -webkit-transform: translateX(61px);
+    -ms-transform: translateX(61px);
+    transform: translateX(61px);
+  }
