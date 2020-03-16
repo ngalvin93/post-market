@@ -149,6 +149,61 @@ function saveForm() {
 }
 
 
+function switchButton(id){
+
+    if($("#"+id).is(":checked")) {
+        $("#"+id+"_Status").html("Open");
+        $("#"+id+"_StartTime").show();
+        $("#"+id+"_Line").show();
+        $("#"+id+"_EndTime").show();
+    }
+    else
+    {
+        $("#"+id+"_Status").html("Closed");
+        $("#"+id+"_StartTime").hide();
+        $("#"+id+"_Line").hide();
+        $("#"+id+"_EndTime").hide();
+    }
+}
+
+function showDiv(id){
+    $("#"+id+"Div").show();
+    $("#"+id+"Close").show();
+    $("#"+id+"Open").hide();
+}
+function hideDiv(id){
+    $("#"+id+"Div").hide();
+    $("#"+id+"Close").hide();
+    $("#"+id+"Open").show();
+}
+
+
+function uploadBtnClick(id) {
+    $("#" + id + "customFile").click();
+}
+
+
+function readURLById(file,id) {
+    var extname = extnameFun(file.name).toLowerCase();
+    if ((extname == 'png' || extname == 'jpg' || extname == 'jepg') && file.size < 10 * 1024 * 1024) {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+//            fileList[idIndex] = {"filename": file.name, file: this.result, filesize: file.size};
+            $("#"+id+"uploadFileList").append('<div class="form-control uploadItem m-t-10" id="'+id+'fileItem' + idIndex + '">' + file.name + '(' + formatFileSize(file.size) + ')<img src="delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeFile(' + idIndex + ')" /></div>');
+//            fileCount++;
+//            idIndex++;
+        }
+    }
+}
+
+
+function uploadFileChange(id) {
+    $.each($("#"+id+"customFile")[0].files, function (i,val) {
+        readURLById(val,id);
+    });
+}
+
 
 $(function(){
 

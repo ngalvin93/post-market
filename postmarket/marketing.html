@@ -5,163 +5,512 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="switch.css" />
+    <link rel="stylesheet" href="switch.css"/>
     <link rel="stylesheet" href="https://use.typekit.net/wfm7wrh.css"/>
     <link rel="stylesheet" href="form.css"/>
     <title>POST</title>
 </head>
 <body>
 <div class="col-8">
-    <h2 class="primary-text hero-text">Submit a set of your marketing materials to fully 
-        utilize all marketing resources available to our 
-        tenants. Refer to the Tenant Handbook here for 
-        marketing guidelines on how to format your 
-        material.</h2>
-    <form>
-        <h2 class="primary-text">Personal information</h2>
-        <div class="form-row">
-            <div class="form-group col">
-                <label for="first-name">First name</label>
-                <input type="text" class="form-control" id="first-name">
-            </div>
-            <div class="form-group col">
-                <label for="last-name">Last name</label>
-                <input type="text" class="form-control" id="last-name">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-8">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email">
-            </div>
-            <div class="form-group col">
-                <label for="phone">Phone</label>
-                <input type="text" class="form-control" id="phone">
-            </div>
-        </div>
-        <h2 class="primary-text">Business information</h2>
-        <div class="form-row">
-            <div class="form-group col-9">
-                <label for="business-name">Business name</label>
-                <input type="text" class="form-control" id="business-name">
-            </div>
-            <div class="form-group col-3">
-                <label for="stall-number">Stall/Kiosk #</label>
-                <select class="form-control" id="stall-number">
-                    <option selected>Choose ...</option>
-                    <option>O100</option>
-                    <option>O101</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-8">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email">
-            </div>
-            <div class="form-group col">
-                <label for="phone">Phone</label>
-                <input type="text" class="form-control" id="phone">
-            </div>
-        </div>
+<h2 class="primary-text hero-text">Submit a set of your marketing materials to fully
+    utilize all marketing resources available to our
+    tenants. Refer to the Tenant Handbook here for
+    marketing guidelines on how to format your
+    material.</h2>
 
+<form>
+<h2 class="primary-text">Personal information</h2>
 
-        <div class="form-row">
-            <div class="form-group col-12">
-                <label>Operating hours</label>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col-3">
-                <label>Sunday</label>
-            </div>
-            <div class="custom-switch">
-                <input class="custom-switch-input" id="Sunday" type="checkbox" checked="checked">
-                <label class="custom-switch-btn" for="Sunday"></label>
-            </div>
-        </div>
-
-
-        <div class="form-row">
-            <div class="form-group col-12">
-                <label></label>
-            </div>
-        </div>
-
-
-        <div class="form-row">
-            <div class="form-group col">
-                <label for="businessDescription">Business description</label>
-                <textarea class="form-control" id="businessDescription" rows="3"></textarea>
-            </div>
-        </div>
-
-        <div class="form-row">
-            <div class="form-group col">
-                <label style="font-size: 18px">Short description about your business in 160-300 characters, maximum 2 paragraphs</label>
-            </div>
-        </div>
-
-
-        <div class="form-row">
-            <div class="form-group col">
-                <label for="ownerBiography">Owner(s) biography</label>
-                <textarea class="form-control" id="ownerBiography" rows="3"></textarea>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col">
-                <label style="font-size: 18px">Brief biography about the business owner(s) in 160-400 characters, maximum 3 paragraphs</label>
-            </div>
-        </div>
-
-
-        <h2 class="primary-text">Upload your marketing assets</h2>
-
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
-            <div class="form-group col list-form-group">
-                <label for="ownerBiography">Owner(s) headshot</label>
-
-                <div class="pull-right-plus">+</div>
-             </div>
-        </div>
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
-            <div class="form-group col list-form-group">
-                <label for="ownerBiography">Photograph of a dish/product</label>
-                <div class="pull-right-plus">+</div>
-            </div>
-        </div>
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
-            <div class="form-group col list-form-group">
-                <label for="ownerBiography">Primary photograph</label>
-                <div class="pull-right-plus">+</div>
-            </div>
-        </div>
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
-            <div class="form-group col list-form-group">
-                <label for="ownerBiography">Secondary photograph</label>
-                <div class="pull-right-plus">+</div>
-            </div>
-        </div>
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
-            <div class="form-group col list-form-group">
-                <label for="ownerBiography">Logos</label>
-                <div class="pull-right-plus">+</div>
-            </div>
-        </div>
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
-            <div class="form-group col list-form-group">
-                <label for="ownerBiography">Menu</label>
-                <div class="pull-right-plus">+</div>
-            </div>
-        </div>
-        <div  class="form-row" style="border-top: 4px solid #F54544;">
-        </div>
-        <button type="submit" class="btn btn-block m-t-10" id="submit-btn">Submit</button>
-    </form>
+<div class="form-row">
+    <div class="form-group col">
+        <label for="first-name">First name</label>
+        <input type="text" class="form-control" id="first-name">
+    </div>
+    <div class="form-group col">
+        <label for="last-name">Last name</label>
+        <input type="text" class="form-control" id="last-name">
+    </div>
 </div>
-<script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<div class="form-row">
+    <div class="form-group col-8">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email">
+    </div>
+    <div class="form-group col">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" id="phone">
+    </div>
+</div>
+<h2 class="primary-text">Business information</h2>
+
+<div class="form-row">
+    <div class="form-group col-9">
+        <label for="business-name">Business name</label>
+        <input type="text" class="form-control" id="business-name">
+    </div>
+    <div class="form-group col-3">
+        <label for="stall-number">Stall/Kiosk #</label>
+        <select class="form-control" id="stall-number">
+            <option selected>Choose ...</option>
+            <option>O100</option>
+            <option>O101</option>
+        </select>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-8">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email">
+    </div>
+    <div class="form-group col">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" id="phone">
+    </div>
+</div>
+
+
+<div class="form-row">
+    <div class="form-group col-12">
+        <label>Operating hours</label>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-2">
+        <label>Sunday</label>
+    </div>
+    <div class="custom-switch col-2">
+        <input class="custom-switch-input" id="Sunday" type="checkbox" checked="checked"
+               onclick="switchButton('Sunday')">
+        <label class="custom-switch-btn" for="Sunday"></label>
+    </div>
+    <div class="form-group col-1">
+        <label id="Sunday_Status">Open</label>
+    </div>
+    <div class="form-group col-3" id="Sunday_StartTime">
+        <input type="text" class="form-control" id="SundayStartInput">
+    </div>
+    <div class="form-group col-1 item-line" id="Sunday_Line">
+        -
+    </div>
+    <div class="form-group col-3" id="Sunday_EndTime">
+        <input type="text" class="form-control" id="SundayEndInput">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-2">
+        <label>Monday</label>
+    </div>
+    <div class="custom-switch col-2">
+        <input class="custom-switch-input" id="Monday" type="checkbox" checked="checked"
+               onclick="switchButton('Monday')">
+        <label class="custom-switch-btn" for="Monday"></label>
+    </div>
+    <div class="form-group col-1">
+        <label id="Monday_Status">Open</label>
+    </div>
+    <div class="form-group col-3" id="Monday_StartTime">
+        <input type="text" class="form-control" id="MondayStartInput">
+    </div>
+    <div class="form-group col-1 item-line" id="Monday_Line">
+        -
+    </div>
+    <div class="form-group col-3" id="Monday_EndTime">
+        <input type="text" class="form-control" id="MondayEndInput">
+    </div>
+</div>
+
+
+<div class="form-row">
+    <div class="form-group col-2">
+        <label>Tuesday</label>
+    </div>
+    <div class="custom-switch col-2">
+        <input class="custom-switch-input" id="Tuesday" type="checkbox" checked="checked"
+               onclick="switchButton('Tuesday')">
+        <label class="custom-switch-btn" for="Tuesday"></label>
+    </div>
+    <div class="form-group col-1">
+        <label id="Tuesday_Status">Open</label>
+    </div>
+    <div class="form-group col-3" id="Tuesday_StartTime">
+        <input type="text" class="form-control" id="TuesdayStartInput">
+    </div>
+    <div class="form-group col-1 item-line" id="Tuesday_Line">
+        -
+    </div>
+    <div class="form-group col-3" id="Tuesday_EndTime">
+        <input type="text" class="form-control" id="TuesdayEndInput">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-2">
+        <label>Wednesday</label>
+    </div>
+    <div class="custom-switch col-2">
+        <input class="custom-switch-input" id="Wednesday" type="checkbox" checked="checked"
+               onclick="switchButton('Wednesday')">
+        <label class="custom-switch-btn" for="Wednesday"></label>
+    </div>
+    <div class="form-group col-1">
+        <label id="Wednesday_Status">Open</label>
+    </div>
+    <div class="form-group col-3" id="Wednesday_StartTime">
+        <input type="text" class="form-control" id="WednesdayStartInput">
+    </div>
+    <div class="form-group col-1 item-line" id="Wednesday_Line">
+        -
+    </div>
+    <div class="form-group col-3" id="Wednesday_EndTime">
+        <input type="text" class="form-control" id="WednesdayEndInput">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-2">
+        <label>Thursday</label>
+    </div>
+    <div class="custom-switch col-2">
+        <input class="custom-switch-input" id="Thursday" type="checkbox" checked="checked"
+               onclick="switchButton('Thursday')">
+        <label class="custom-switch-btn" for="Thursday"></label>
+    </div>
+    <div class="form-group col-1">
+        <label id="Thursday_Status">Open</label>
+    </div>
+    <div class="form-group col-3" id="Thursday_StartTime">
+        <input type="text" class="form-control" id="ThursdayStartInput">
+    </div>
+    <div class="form-group col-1 item-line" id="Thursday_Line">
+        -
+    </div>
+    <div class="form-group col-3" id="Thursday_EndTime">
+        <input type="text" class="form-control" id="ThursdayEndInput">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-2">
+        <label>Friday</label>
+    </div>
+    <div class="custom-switch col-2">
+        <input class="custom-switch-input" id="Friday" type="checkbox" checked="checked"
+               onclick="switchButton('Friday')">
+        <label class="custom-switch-btn" for="Friday"></label>
+    </div>
+    <div class="form-group col-1">
+        <label id="Friday_Status">Open</label>
+    </div>
+    <div class="form-group col-3" id="Friday_StartTime">
+        <input type="text" class="form-control" id="FridayStartInput">
+    </div>
+    <div class="form-group col-1 item-line" id="Friday_Line">
+        -
+    </div>
+    <div class="form-group col-3" id="Friday_EndTime">
+        <input type="text" class="form-control" id="FridayEndInput">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-2">
+        <label>Saturday</label>
+    </div>
+    <div class="custom-switch col-2">
+        <input class="custom-switch-input" id="Saturday" type="checkbox" checked="checked"
+               onclick="switchButton('Saturday')">
+        <label class="custom-switch-btn" for="Saturday"></label>
+    </div>
+    <div class="form-group col-1">
+        <label id="Saturday_Status">Open</label>
+    </div>
+    <div class="form-group col-3" id="Saturday_StartTime">
+        <input type="text" class="form-control" id="SaturdayStartInput">
+    </div>
+    <div class="form-group col-1 item-line" id="Saturday_Line">
+        -
+    </div>
+    <div class="form-group col-3" id="Saturday_EndTime">
+        <input type="text" class="form-control" id="SaturdayEndInput">
+    </div>
+</div>
+
+
+<div class="form-row">
+    <div class="form-group col-12">
+        <label>Social media accounts</label>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-2">
+        <label>Facebook</label>
+    </div>
+    <div class="form-group col-10">
+        <input type="text" class="form-control" id="FacebookInput">
+    </div>
+</div>
+
+
+<div class="form-row">
+    <div class="form-group col-2">
+        <label>Instagram</label>
+    </div>
+    <div class="form-group col-10">
+        <input type="text" class="form-control" id="InstagramInput">
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-2">
+        <label>Twitter</label>
+    </div>
+    <div class="form-group col-10">
+        <input type="text" class="form-control" id="TwitterInput">
+    </div>
+</div>
+
+
+<div class="form-row">
+    <div class="form-group col">
+        <label for="businessDescription">Business description</label>
+        <textarea class="form-control" id="businessDescription" rows="3"></textarea>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col">
+        <label style="font-size: 18px">Short description about your business in 160-300 characters, maximum 2
+            paragraphs</label>
+    </div>
+</div>
+
+
+<div class="form-row">
+    <div class="form-group col">
+        <label for="ownerBiography">Owner(s) biography</label>
+        <textarea class="form-control" id="ownerBiography" rows="3"></textarea>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col">
+        <label style="font-size: 18px">Brief biography about the business owner(s) in 160-400 characters, maximum 3
+            paragraphs</label>
+    </div>
+</div>
+
+
+<h2 class="primary-text">Upload your marketing assets</h2>
+
+<div class="form-row" style="border-top: 4px solid #F54544;">
+    <div class="form-group col-12 list-form-group">
+        <label for="ownerBiography">Owner(s) headshot</label>
+
+        <div class="pull-right-plus">
+            <img src="delete.png" id="headshotClose" style="width: 24px; float: right; cursor: pointer; margin-top:10px; display: none" onclick="hideDiv('headshot')">
+            <img src="plus.png" id="headshotOpen" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="showDiv('headshot')">
+        </div>
+    </div>
+
+    <div id="headshotDiv" style="display: none; width: 100%">
+        <div class="form-group col-12 list-form-group" style="padding: 0px">
+            <label for="ownerBiography">Submit a photo of the business owner(s) for use on marketing materials like the
+                POST MARKET website. Submit one headshot per owner. </label>
+        </div>
+
+        <div id="headshotuploadFileList">
+        </div>
+        <div class="form-row m-t-10">
+            <div class="col-12">
+                <button type="button" class="btn ItemBtn" id="headshotuploadBtn" onclick="uploadBtnClick('headshot')">Upload</button>
+                <input type="file" style="display: none" id="headshotcustomFile" multiple="multiple" onchange="uploadFileChange('headshot')"
+                       accept=".jpg,.jepg,.png">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label style="font-size: 18px">Files must be less than 10mb. Allowed file types: jpg, png, png.</label>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<div class="form-row" style="border-top: 4px solid #F54544;">
+    <div class="form-group col-12 list-form-group">
+        <label for="ownerBiography">Photograph of a dish/product</label>
+
+        <div class="pull-right-plus">
+            <img src="delete.png" id="photographClose" style="width: 24px; float: right; cursor: pointer; margin-top:10px; display: none" onclick="hideDiv('photograph')">
+            <img src="plus.png" id="photographOpen" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="showDiv('photograph')">
+        </div>
+    </div>
+
+    <div id="photographDiv" style="display: none; width: 100%">
+        <div class="form-group col-12 list-form-group" style="padding: 0px">
+            <label for="ownerBiography">This photo will be used on the directory of the POST MARKET website.</label>
+        </div>
+
+        <div id="photographuploadFileList">
+        </div>
+        <div class="form-row m-t-10">
+            <div class="col-12">
+                <button type="button" class="btn ItemBtn" id="photographuploadBtn" onclick="uploadBtnClick('photograph')">Upload</button>
+                <input type="file" style="display: none" id="photographcustomFile" multiple="multiple" onchange="uploadFileChange('photograph')"
+                       accept=".jpg,.jepg,.png">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label style="font-size: 18px">Files must be less than 10mb. Allowed file types: jpg, png, png.</label>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="form-row" style="border-top: 4px solid #F54544;">
+    <div class="form-group col-12 list-form-group">
+        <label for="ownerBiography">Primary photograph</label>
+
+        <div class="pull-right-plus">
+            <img src="delete.png" id="primaryClose" style="width: 24px; float: right; cursor: pointer; margin-top:10px; display: none" onclick="hideDiv('primary')">
+            <img src="plus.png" id="primaryOpen" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="showDiv('primary')">
+        </div>
+    </div>
+
+    <div id="primaryDiv" style="display: none; width: 100%">
+        <div class="form-group col-12 list-form-group" style="padding: 0px">
+            <label for="ownerBiography">If you could sum up your business in one photo, this would be it. This will be used as the hero image on your business profile on the POST MARKET website.</label>
+        </div>
+
+        <div id="primaryuploadFileList">
+        </div>
+        <div class="form-row m-t-10">
+            <div class="col-12">
+                <button type="button" class="btn ItemBtn" id="primaryuploadBtn" onclick="uploadBtnClick('primary')">Upload</button>
+                <input type="file" style="display: none" id="primarycustomFile" multiple="multiple" onchange="uploadFileChange('primary')"
+                       accept=".jpg,.jepg,.png">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label style="font-size: 18px">Files must be less than 10mb. Allowed file types: jpg, png, png.</label>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="form-row" style="border-top: 4px solid #F54544;">
+    <div class="form-group col-12 list-form-group">
+        <label for="ownerBiography">Secondary photograph</label>
+
+        <div class="pull-right-plus">
+            <img src="delete.png" id="secondaryClose" style="width: 24px; float: right; cursor: pointer; margin-top:10px; display: none" onclick="hideDiv('secondary')">
+            <img src="plus.png" id="secondaryOpen" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="showDiv('secondary')">
+        </div>
+    </div>
+
+    <div id="secondaryDiv" style="display: none; width: 100%">
+        <div class="form-group col-12 list-form-group" style="padding: 0px">
+            <label for="ownerBiography">Upload 3-5 photos that tell a story about your business. These will be featured on your business profile alongside your business description and owner biography.</label>
+        </div>
+
+        <div id="secondaryuploadFileList">
+        </div>
+        <div class="form-row m-t-10">
+            <div class="col-12">
+                <button type="button" class="btn ItemBtn" id="secondaryuploadBtn" onclick="uploadBtnClick('secondary')">Upload</button>
+                <input type="file" style="display: none" id="secondarycustomFile" multiple="multiple" onchange="uploadFileChange('secondary')"
+                       accept=".jpg,.jepg,.png">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label style="font-size: 18px">Files must be less than 10mb. Allowed file types: jpg, png, png.</label>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="form-row" style="border-top: 4px solid #F54544;">
+    <div class="form-group col-12 list-form-group">
+        <label for="ownerBiography">Logos</label>
+
+        <div class="pull-right-plus">
+            <img src="delete.png" id="logosClose" style="width: 24px; float: right; cursor: pointer; margin-top:10px; display: none" onclick="hideDiv('logos')">
+            <img src="plus.png" id="logosOpen" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="showDiv('logos')">
+        </div>
+    </div>
+
+    <div id="logosDiv" style="display: none; width: 100%">
+        <div class="form-group col-12 list-form-group" style="padding: 0px">
+            <label for="ownerBiography">Provide your logo in vector (ai, eps, svg) format. These file formats are required because vector- based art can be resized without degrading shape or color. Submit color, single-color dark, and single-color white versions of your logo.</label>
+        </div>
+
+        <div id="logosuploadFileList">
+        </div>
+        <div class="form-row m-t-10">
+            <div class="col-12">
+                <button type="button" class="btn ItemBtn" id="logosuploadBtn" onclick="uploadBtnClick('logos')">Upload</button>
+                <input type="file" style="display: none" id="logoscustomFile" multiple="multiple" onchange="uploadFileChange('logos')"
+                       accept=".jpg,.jepg,.png">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label style="font-size: 18px">Files must be less than 10mb. Allowed file types: jpg, png, png.</label>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="form-row" style="border-top: 4px solid #F54544;">
+    <div class="form-group col-12 list-form-group">
+        <label for="ownerBiography">Menu</label>
+
+        <div class="pull-right-plus">
+            <img src="delete.png" id="menuClose" style="width: 24px; float: right; cursor: pointer; margin-top:10px; display: none" onclick="hideDiv('menu')">
+            <img src="plus.png" id="menuOpen" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="showDiv('menu')">
+        </div>
+    </div>
+
+    <div id="menuDiv" style="display: none; width: 100%">
+        <div class="form-group col-12 list-form-group" style="padding: 0px">
+            <label for="ownerBiography">Upload your business' menu, if applicable.</label>
+        </div>
+
+        <div id="menuuploadFileList">
+        </div>
+        <div class="form-row m-t-10">
+            <div class="col-12">
+                <button type="button" class="btn ItemBtn" id="menuuploadBtn" onclick="uploadBtnClick('menu')">Upload</button>
+                <input type="file" style="display: none" id="menucustomFile" onchange="uploadFileChange('menu')" multiple="multiple"
+                       accept=".jpg,.jepg,.png">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col">
+                <label style="font-size: 18px">Files must be less than 10mb. Allowed file types: jpg, png, png.</label>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="form-row" style="border-top: 4px solid #F54544;">
+</div>
+<button type="submit" class="btn btn-block m-t-10" id="submit-btn">Submit</button>
+</form>
+</div>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
 <script src="jquery.mask.min.js"></script>
 <script src="form.js"></script>
 </body>

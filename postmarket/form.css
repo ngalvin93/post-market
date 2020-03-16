@@ -55,10 +55,15 @@ select{
 }
 .pull-right-plus{
     float: right;
-    margin-right: 20px;
+    margin-right: 10px;
     font-size: 30px;
     cursor: pointer;
 }
+
+.item-line{
+    font-size: 40px;
+    text-align: center;
+ }
 
 .hero-text {
     padding: 50px 0;
