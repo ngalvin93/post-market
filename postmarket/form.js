@@ -76,16 +76,16 @@ function formatFileSize(size) {
 function readURL(file) {
     var extname = extnameFun(file.name).toLowerCase();
     if ((extname == 'doc' || extname == 'docx' || extname == 'pdf' || extname == 'jpg' || extname == 'jepg') && file.size < 5 * 1024 * 1024) {
-        var reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = function () {
-            fileList[idIndex] = {"filename": file.name, file: this.result, filesize: file.size};
+//        var reader = new FileReader();
+//        reader.readAsDataURL(file);
+//        reader.onload = function () {
+            fileList[idIndex] = {"filename": file.name, file: file, filesize: file.size};
             $("#uploadFileList").append('<div class="form-control uploadItem m-t-10" id="fileItem' + idIndex + '">' + file.name + '(' + formatFileSize(file.size) + ')<img src="delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeFile(' + idIndex + ')" /></div>');
             fileCount++;
             idIndex++;
 
         }
-    }
+ //   }
 }
 
 
@@ -108,7 +108,7 @@ function GetTotal() {
 }
 
 
-function saveForm() {
+function saveForm22() {
 
     var itemList=[];
    for(var i=0;i<itemIndex;i++) {
@@ -182,13 +182,13 @@ function uploadBtnClick(id) {
     $("#" + id + "customFile").click();
 }
 
-
 function readURLById(file,id) {
     var extname = extnameFun(file.name).toLowerCase();
     if ((extname == 'png' || extname == 'jpg' || extname == 'jepg') && file.size < 10 * 1024 * 1024) {
         var reader = new FileReader();
-        reader.readAsDataURL(file);
+        reader.readAsArrayBuffer(file);
         reader.onload = function () {
+            testArray.push(this.result);
 //            fileList[idIndex] = {"filename": file.name, file: this.result, filesize: file.size};
             $("#"+id+"uploadFileList").append('<div class="form-control uploadItem m-t-10" id="'+id+'fileItem' + idIndex + '">' + file.name + '(' + formatFileSize(file.size) + ')<img src="delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeFile(' + idIndex + ')" /></div>');
 //            fileCount++;
@@ -203,6 +203,109 @@ function uploadFileChange(id) {
         readURLById(val,id);
     });
 }
+
+
+function saveForm(){
+
+    if($("#first-name").val().length==0){
+       $("#first-name").addClass("is-invalid");
+        return false;
+    }
+    else{
+        $("#first-name").removeClass("is-invalid");
+    }
+
+    if($("#last-name").val().length==0){
+        $("#last-name").addClass("is-invalid");
+        return false;
+    }
+    else{
+        $("#last-name").removeClass("is-invalid");
+    }
+
+    if($("#email").val().length==0){
+        $("#email").addClass("is-invalid");
+        return false;
+    }
+    else{
+        $("#email").removeClass("is-invalid");
+    }
+
+    if($("#phone").val().length==0){
+        $("#phone").addClass("is-invalid");
+        return false;
+    }
+    else{
+        $("#phone").removeClass("is-invalid");
+    }
+
+
+    if($("#business-name").val().length==0){
+        $("#business-name").addClass("is-invalid");
+        return false;
+    }
+    else{
+        $("#business-name").removeClass("is-invalid");
+    }
+
+    var itemList=[];
+    for(var i=0;i<itemIndex;i++) {
+        itemList.push({"item": $("#itemName" + i).val(), "price": parseFloat($("#itemAmount" + i).val().replace(/,/g, ''))})
+    }
+
+
+    var postData = {
+        FirstName: $("#first-name").val(),
+        LastName: $("#last-name").val(),
+        Email: $("#email").val(),
+        Phone: $("#phone").val(),
+        BusinessName: $("#business-name").val(),
+        Stall: $("#stall-number").val(),
+        SelectForm: $("#select-form").val(),
+        Total: parseFloat($("#amountTotal").val().replace(/,/g, '')),
+        Items:itemList
+    }
+
+    const formData = new FormData();
+
+
+    for (var key in fileList) {
+        var item = fileList[key];
+        formData.append("files.Files",item.file, item.name)
+    }
+
+    formData.append('data', JSON.stringify(postData));
+
+    $.ajax({
+        type: "POST",
+        contentType: false,
+        processData: false,
+        url: "http://localhost:1337/form-infos",
+        data: formData,
+        success: function (data) {
+            if (data.result == 1) {
+                console.log(data);
+            }
+            else {
+                console.log(data);
+            }
+        },
+        error: function (e) {
+        }
+    });
+
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 $(function(){

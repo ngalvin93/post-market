@@ -27,6 +27,11 @@ body {
     color: #F54544;
 }
 
+
+.custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid{
+    border-color:#ffc107;
+}
+
 select{
     height: 65px !important;
 }
