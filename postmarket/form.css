@@ -21,6 +21,35 @@ body {
 }
 
 
+
+
+.custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid
+{
+    border: 4px solid #F54544;
+    webkit-box-shadow:none;
+    box-shadow:none;
+}
+
+.custom-select.is-invalid:focus, .form-control.is-invalid:focus, .was-validated .custom-select:invalid:focus, .was-validated .form-control:invalid:focus{
+    border: 4px solid #F54544;
+    webkit-box-shadow:none;
+    box-shadow:none;
+}
+
+
+.custom-select.is-valid, .form-control.is-valid, .was-validated .custom-select:valid, .was-validated .form-control:valid{
+    border: 4px solid #F54544;
+    webkit-box-shadow:none;
+    box-shadow:none;
+}
+
+.custom-select.is-valid:focus, .form-control.is-valid:focus, .was-validated .custom-select:valid:focus, .was-validated .form-control:valid:focus{
+    border: 4px solid #F54544;
+    webkit-box-shadow:none;
+    box-shadow:none;
+}
+
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -41,7 +70,7 @@ input:-webkit-autofill:active {
 
 
 .custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid{
-    border-color:#ffc107;
+    border-color:#F54544;
 }
 
 select{
@@ -99,6 +128,10 @@ select{
     height:65px;
     border-radius: 0px;
     font-size: 30px;
+}
+
+.btn.disabled, .btn:disabled{
+    background-color: #87888D;
 }
 
 .btn{

@@ -9,29 +9,29 @@ function addItemToTable () {
 
     const currentRow = table.insertRow();
     currentRow.setAttribute('class', 'form-row m-t-10');
-    currentRow.setAttribute('id', 'itemRow'+itemIndex);
+    currentRow.setAttribute('id', 'itemRow' + itemIndex);
 
     const itemInput = document.createElement('input');
     itemInput.setAttribute('class', 'form-control itemNameInput');
-    itemInput.setAttribute('id', 'itemName'+itemIndex);
+    itemInput.setAttribute('id', 'itemName' + itemIndex);
 
 
     const amountInput = document.createElement('input')
     amountInput.setAttribute('class', 'form-control itemAmountInput');
-    amountInput.setAttribute('id', 'itemAmount'+itemIndex);
+    amountInput.setAttribute('id', 'itemAmount' + itemIndex);
 
 
-    const deleteImg=document.createElement('img');
-    deleteImg.setAttribute('id', 'deleteImg'+itemIndex);
+    const deleteImg = document.createElement('img');
+    deleteImg.setAttribute('id', 'deleteImg' + itemIndex);
     deleteImg.setAttribute('src', 'delete.png');
     deleteImg.setAttribute('style', 'width: 24px;right: 20px;cursor: pointer;top: 20px;position: absolute; display:none');
-    deleteImg.setAttribute('onclick', 'removeItemToTable('+itemIndex+')');
+    deleteImg.setAttribute('onclick', 'removeItemToTable(' + itemIndex + ')');
 
 
     let currentCell = currentRow.insertCell();
     currentCell.setAttribute('class', 'col-9');
-    currentCell.setAttribute('onmouseover', 'itemRowMouseOver('+itemIndex+')');
-    currentCell.setAttribute('onmouseout', 'itemRowMouseOut('+itemIndex+')');
+    currentCell.setAttribute('onmouseover', 'itemRowMouseOver(' + itemIndex + ')');
+    currentCell.setAttribute('onmouseout', 'itemRowMouseOut(' + itemIndex + ')');
 
     currentCell.appendChild(itemInput);
     currentCell.appendChild(deleteImg);
@@ -359,6 +359,13 @@ $(function(){
         else {
             $("#choose-title").html($('#select-form').val());
             $("#ChooseForm").show();
+            if($('#select-form').val()=="Deposit withdrawal"){
+                $("#withdrawal").show();
+            }
+            else
+            {
+                $("#withdrawal").hide();
+            }
         }
     });
 
@@ -366,7 +373,21 @@ $(function(){
         saveForm();
     })
 
-
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('keyup', function(event) {
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+                $("#submit-btn").attr('disabled','disabled');
+            }
+            else
+            {
+                $("#submit-btn").removeAttr('disabled');
+            }
+        }, false);
+    });
 
 
 });
