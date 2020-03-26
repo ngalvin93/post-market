@@ -3,6 +3,34 @@ var fileList = {};
 var idIndex = 0;
 var itemIndex=1;
 
+var marketingFileList={
+    "headshot":{},
+    "photograph":{},
+    "primary":{},
+    "secondary":{},
+    "logos":{},
+    "menu":{}
+};
+
+var marketingFileCount={
+    "headshot":0,
+    "photograph":0,
+    "primary":0,
+    "secondary":0,
+    "logos":0,
+    "menu":0
+};
+var marketingIndex={
+    "headshot":0,
+    "photograph":0,
+    "primary":0,
+    "secondary":0,
+    "logos":0,
+    "menu":0
+};
+
+
+
 
 
 function addItemToTable () {
@@ -119,6 +147,7 @@ function readURL(file) {
 }
 
 
+
 function removeFile(index) {
     delete fileList[index];
     fileCount--;
@@ -216,12 +245,19 @@ function uploadBtnClick(id) {
 function readURLById(file,id) {
     var extname = extnameFun(file.name).toLowerCase();
     if ((extname == 'png' || extname == 'jpg' || extname == 'jepg') && file.size < 10 * 1024 * 1024) {
-
-//            fileList[idIndex] = {"filename": file.name, file: this.result, filesize: file.size};
-            $("#"+id+"uploadFileList").append('<div class="form-control uploadItem m-t-10" id="'+id+'fileItem' + idIndex + '">' + file.name + '(' + formatFileSize(file.size) + ')<img src="img/delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeFile(' + idIndex + ')" /></div>');
+        marketingFileList[id][marketingIndex[id]] = {"filename": file.name, file: file, filesize: file.size};
+        $("#" + id + "uploadFileList").append('<div class="form-control uploadItem m-t-10" id="' + id + 'fileItem' + marketingIndex[id] + '">' + file.name + '(' + formatFileSize(file.size) + ')<img src="img/delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeMarkingFile(\'' + id + '\',' + marketingIndex[id] + ')" /></div>');
+        marketingFileCount[id]++;
+        marketingIndex[id]++;
     }
 }
 
+
+function removeMarkingFile(id,index) {
+    delete marketingFileList[id][index]
+    marketingFileCount[id]--;
+    $("#" + id + "fileItem" + index).remove();
+}
 
 function uploadFileChange(id) {
     $.each($("#"+id+"customFile")[0].files, function (i,val) {
