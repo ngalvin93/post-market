@@ -4,6 +4,7 @@ var idIndex = 0;
 var itemIndex=1;
 
 
+
 function addItemToTable () {
     const table = document.getElementById('items-table');
 
@@ -23,7 +24,7 @@ function addItemToTable () {
 
     const deleteImg = document.createElement('img');
     deleteImg.setAttribute('id', 'deleteImg' + itemIndex);
-    deleteImg.setAttribute('src', 'delete.png');
+    deleteImg.setAttribute('src', 'img/delete.png');
     deleteImg.setAttribute('style', 'width: 24px;right: 20px;cursor: pointer;top: 20px;position: absolute; display:none');
     deleteImg.setAttribute('onclick', 'removeItemToTable(' + itemIndex + ')');
 
@@ -111,7 +112,7 @@ function readURL(file) {
     var extname = extnameFun(file.name).toLowerCase();
     if ((extname == 'doc' || extname == 'docx' || extname == 'pdf' || extname == 'jpg' || extname == 'jepg') && file.size < 5 * 1024 * 1024) {
             fileList[idIndex] = {"filename": file.name, file: file, filesize: file.size};
-            $("#uploadFileList").append('<div class="form-control uploadItem m-t-10" id="fileItem' + idIndex + '">' + file.name + '(' + formatFileSize(file.size) + ')<img src="delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeFile(' + idIndex + ')" /></div>');
+            $("#uploadFileList").append('<div class="form-control uploadItem m-t-10" id="fileItem' + idIndex + '">' + file.name + '(' + formatFileSize(file.size) + ')<img src="img/delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeFile(' + idIndex + ')" /></div>');
             fileCount++;
             idIndex++;
         }
@@ -179,7 +180,8 @@ function saveForm22() {
 
 function switchButton(id){
 
-    if($("#"+id).is(":checked")) {
+    if($("#"+id).attr("src")=="img/close.png") {
+        $("#"+id).attr("src","img/open.png");
         $("#"+id+"_Status").html("Open");
         $("#"+id+"_StartTime").show();
         $("#"+id+"_Line").show();
@@ -187,6 +189,7 @@ function switchButton(id){
     }
     else
     {
+        $("#"+id).attr("src","img/close.png");
         $("#"+id+"_Status").html("Closed");
         $("#"+id+"_StartTime").hide();
         $("#"+id+"_Line").hide();
@@ -213,15 +216,9 @@ function uploadBtnClick(id) {
 function readURLById(file,id) {
     var extname = extnameFun(file.name).toLowerCase();
     if ((extname == 'png' || extname == 'jpg' || extname == 'jepg') && file.size < 10 * 1024 * 1024) {
-        var reader = new FileReader();
-        reader.readAsArrayBuffer(file);
-        reader.onload = function () {
-            testArray.push(this.result);
+
 //            fileList[idIndex] = {"filename": file.name, file: this.result, filesize: file.size};
-            $("#"+id+"uploadFileList").append('<div class="form-control uploadItem m-t-10" id="'+id+'fileItem' + idIndex + '">' + file.name + '(' + formatFileSize(file.size) + ')<img src="delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeFile(' + idIndex + ')" /></div>');
-//            fileCount++;
-//            idIndex++;
-        }
+            $("#"+id+"uploadFileList").append('<div class="form-control uploadItem m-t-10" id="'+id+'fileItem' + idIndex + '">' + file.name + '(' + formatFileSize(file.size) + ')<img src="img/delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeFile(' + idIndex + ')" /></div>');
     }
 }
 
