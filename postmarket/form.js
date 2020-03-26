@@ -21,11 +21,21 @@ function addItemToTable () {
     amountInput.setAttribute('id', 'itemAmount'+itemIndex);
 
 
+    const deleteImg=document.createElement('img');
+    deleteImg.setAttribute('id', 'deleteImg'+itemIndex);
+    deleteImg.setAttribute('src', 'delete.png');
+    deleteImg.setAttribute('style', 'width: 24px;right: 20px;cursor: pointer;top: 20px;position: absolute; display:none');
+    deleteImg.setAttribute('onclick', 'removeItemToTable('+itemIndex+')');
+
 
     let currentCell = currentRow.insertCell();
     currentCell.setAttribute('class', 'col-9');
+    currentCell.setAttribute('onmouseover', 'itemRowMouseOver('+itemIndex+')');
+    currentCell.setAttribute('onmouseout', 'itemRowMouseOut('+itemIndex+')');
+
     currentCell.appendChild(itemInput);
-    currentCell.append('<img src="delete.png" />');
+    currentCell.appendChild(deleteImg);
+
 
     currentCell = currentRow.insertCell();
     currentCell.setAttribute('class', 'col-3');
@@ -38,7 +48,21 @@ function addItemToTable () {
 
 function removeItemToTable (index) {
     $("#itemRow"+index).remove();
-    GetTotal();
+    var price = 0.00;
+    $(".itemAmountInput").each(function () {
+        if ($(this).val() != '') {
+            price += parseFloat($(this).val().replace(/,/g,''));
+        }
+    });
+    $("#amountTotal").val(formatAmount(price));
+}
+
+function itemRowMouseOver(id){
+ $("#deleteImg"+id).show();
+}
+
+function itemRowMouseOut(id){
+    $("#deleteImg"+id).hide();
 }
 
 
