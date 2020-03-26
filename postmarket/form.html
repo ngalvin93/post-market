@@ -71,9 +71,10 @@
                     <label for="items-table">Item</label>
 
                     <table class="form-group col-12" id="items-table">
-                        <tr class="form-row">
+                        <tr class="form-row" id="itemRow0">
                             <td class="col-9">
                                 <input type="text" class="form-control itemNameInput" id="itemName0">
+                                <img src="delete.png" style="width: 24px;right: 20px;cursor: pointer;top: 20px;position: absolute;" onclick="removeItemToTable(0)">
                             </td>
                             <td class="col-3">
                                 <input type="text" class="form-control itemAmountInput" id="itemAmount0">

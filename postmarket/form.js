@@ -5,23 +5,27 @@ var itemIndex=1;
 
 
 function addItemToTable () {
-    console.log('add item');
     const table = document.getElementById('items-table');
 
     const currentRow = table.insertRow();
     currentRow.setAttribute('class', 'form-row m-t-10');
+    currentRow.setAttribute('id', 'itemRow'+itemIndex);
 
     const itemInput = document.createElement('input');
     itemInput.setAttribute('class', 'form-control itemNameInput');
     itemInput.setAttribute('id', 'itemName'+itemIndex);
 
+
     const amountInput = document.createElement('input')
     amountInput.setAttribute('class', 'form-control itemAmountInput');
     amountInput.setAttribute('id', 'itemAmount'+itemIndex);
 
+
+
     let currentCell = currentRow.insertCell();
     currentCell.setAttribute('class', 'col-9');
     currentCell.appendChild(itemInput);
+    currentCell.append('<img src="delete.png" />');
 
     currentCell = currentRow.insertCell();
     currentCell.setAttribute('class', 'col-3');
@@ -32,20 +36,26 @@ function addItemToTable () {
 }
 
 
+function removeItemToTable (index) {
+    $("#itemRow"+index).remove();
+    GetTotal();
+}
+
+
 function formatAmount(num) {
-    num = num.toString().replace(/\$|\,/g,'');
-    if(isNaN(num))
+    num = num.toString().replace(/\$|\,/g, '');
+    if (isNaN(num))
         num = "0";
     sign = (num == (num = Math.abs(num)));
-    num = Math.floor(num*100+0.50000000001);
-    cents = num%100;
-    num = Math.floor(num/100).toString();
-    if(cents<10)
+    num = Math.floor(num * 100 + 0.50000000001);
+    cents = num % 100;
+    num = Math.floor(num / 100).toString();
+    if (cents < 10)
         cents = "0" + cents;
-    for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
-        num = num.substring(0,num.length-(4*i+3))+','+
-            num.substring(num.length-(4*i+3));
-    return (((sign)?'':'-') + num + '.' + cents);
+    for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++)
+        num = num.substring(0, num.length - (4 * i + 3)) + ',' +
+            num.substring(num.length - (4 * i + 3));
+    return (((sign) ? '' : '-') + num + '.' + cents);
 }
 
 
@@ -64,11 +74,11 @@ function formatFileSize(size) {
     if (size < 1024) {
         return size + 'B';
     }
-    if(size>=1024&&size<=1024*1024){
-        return (size/1024).toFixed(2) + 'KB';
+    if (size >= 1024 && size <= 1024 * 1024) {
+        return (size / 1024).toFixed(2) + 'KB';
     }
-    if(size>=1024*1024&&size<=1024*1024*1024){
-        return (size/1024/1024).toFixed(2) + 'MB';
+    if (size >= 1024 * 1024 && size <= 1024 * 1024 * 1024) {
+        return (size / 1024 / 1024).toFixed(2) + 'MB';
     }
 }
 
@@ -76,16 +86,11 @@ function formatFileSize(size) {
 function readURL(file) {
     var extname = extnameFun(file.name).toLowerCase();
     if ((extname == 'doc' || extname == 'docx' || extname == 'pdf' || extname == 'jpg' || extname == 'jepg') && file.size < 5 * 1024 * 1024) {
-//        var reader = new FileReader();
-//        reader.readAsDataURL(file);
-//        reader.onload = function () {
             fileList[idIndex] = {"filename": file.name, file: file, filesize: file.size};
             $("#uploadFileList").append('<div class="form-control uploadItem m-t-10" id="fileItem' + idIndex + '">' + file.name + '(' + formatFileSize(file.size) + ')<img src="delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeFile(' + idIndex + ')" /></div>');
             fileCount++;
             idIndex++;
-
         }
- //   }
 }
 
 
@@ -106,7 +111,6 @@ function GetTotal() {
         $("#amountTotal").val(formatAmount(price));
     });
 }
-
 
 function saveForm22() {
 
@@ -297,15 +301,6 @@ function saveForm(){
 
 
 }
-
-
-
-
-
-
-
-
-
 
 
 $(function(){

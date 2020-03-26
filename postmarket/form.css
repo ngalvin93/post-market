@@ -20,11 +20,23 @@ body {
     text-align: center;
 }
 
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: var(--red) !important;
+}
+
+
 .form-control, .form-control:focus{
     border: 4px solid #F54544;
     border-radius: 0px;
     font-size: 30px;
     color: #F54544;
+    webkit-box-shadow:none;
+    box-shadow:none;
 }
 
 
