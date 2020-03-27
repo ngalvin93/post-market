@@ -166,12 +166,7 @@ function GetTotal() {
     });
 }
 
-function saveForm22() {
-
-    var itemList=[];
-   for(var i=0;i<itemIndex;i++) {
-       itemList.push({name: $("#itemName" + i).val(), price: parseFloat($("#itemAmount" + i).val().replace(/,/g, ''))})
-   }
+function saveMarketingForm() {
 
     var postData = {
         firstname: $("#first-name").val(),
@@ -189,16 +184,16 @@ function saveForm22() {
 
     $.ajax({
         type: "POST",
-        dataType: "json",
-        contentType: "application/json;charset=UTF-8",
-        url: "http://www2.lovettcommercial.com/api/saveform",
-        data: JSON.stringify(postData),
+        contentType: false,
+        processData: false,
+        url: "http://test.canvashtx.com/marketing-forms",
+        data: formData,
         success: function (data) {
             if (data.result == 1) {
-
+                console.log(data);
             }
             else {
-                alert(data.message);
+                console.log(data);
             }
         },
         error: function (e) {
@@ -231,12 +226,12 @@ function showDiv(id){
     $("#"+id+"Close").show();
     $("#"+id+"Open").hide();
 }
+
 function hideDiv(id){
     $("#"+id+"Div").hide();
     $("#"+id+"Close").hide();
     $("#"+id+"Open").show();
 }
-
 
 function uploadBtnClick(id) {
     $("#" + id + "customFile").click();
@@ -251,7 +246,6 @@ function readURLById(file,id) {
         marketingIndex[id]++;
     }
 }
-
 
 function removeMarkingFile(id,index) {
     delete marketingFileList[id][index]
@@ -310,9 +304,11 @@ function saveForm(){
     }
 
     var itemList=[];
+
     for(var i=0;i<itemIndex;i++) {
-        itemList.push({"item": $("#itemName" + i).val(), "price": parseFloat($("#itemAmount" + i).val().replace(/,/g, ''))})
+        itemList.push({"Item": $("#itemName" + i).val(), "Price": parseFloat($("#itemAmount" + i).val().replace(/,/g, ''))})
     }
+
 
 
     var postData = {
@@ -341,7 +337,7 @@ function saveForm(){
         type: "POST",
         contentType: false,
         processData: false,
-        url: "http://localhost:1337/form-infos",
+        url: "http://test.canvashtx.com/post-forms",
         data: formData,
         success: function (data) {
             if (data.result == 1) {
@@ -407,7 +403,6 @@ $(function(){
     })
 
     var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
     var validation = Array.prototype.filter.call(forms, function(form) {
         form.addEventListener('keyup', function(event) {
             if (form.checkValidity() === false) {
