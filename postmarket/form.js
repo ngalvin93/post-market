@@ -285,7 +285,7 @@ function saveMarketingForm() {
         data: formData,
         success: function (data) {
             if (data.result == 1) {
-                console.log(data);
+                window.location.href="http://test.posthtx.com/";
             }
             else {
                 console.log(data);
@@ -437,12 +437,7 @@ function saveForm(){
         url: "https://admin.posthtx.com/post-forms",
         data: formData,
         success: function (data) {
-            if (data.result == 1) {
-                console.log(data);
-            }
-            else {
-                console.log(data);
-            }
+            window.location.href="http://test.posthtx.com/";
         },
         error: function (e) {
         }
