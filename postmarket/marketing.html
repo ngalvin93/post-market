@@ -18,7 +18,7 @@
     marketing guidelines on how to format your
     material.</h2>
 
-<form>
+<form class="needs-validation was-validated">
 <h2 class="primary-text">Personal information</h2>
 
 <div class="form-row">
@@ -948,7 +948,7 @@
 <div class="form-row">
     <div class="form-group col">
         <label for="businessDescription">Business description</label>
-        <textarea class="form-control" id="businessDescription" rows="3"></textarea>
+        <textarea class="form-control" id="businessDescription" rows="3" maxlength="500"></textarea>
     </div>
 </div>
 
@@ -963,7 +963,7 @@
 <div class="form-row">
     <div class="form-group col">
         <label for="ownerBiography">Owner(s) biography</label>
-        <textarea class="form-control" id="ownerBiography" rows="3"></textarea>
+        <textarea class="form-control" id="ownerBiography" rows="3" maxlength="500"></textarea>
     </div>
 </div>
 <div class="form-row">
@@ -1178,7 +1178,7 @@
 </div>
 <div class="form-row" style="border-top: 4px solid #F54544;">
 </div>
-<button type="button" class="btn ItemBtn m-t-10" id="submit-btn1" onclick="SaveMarketing()" style="width:100%" disabled="disabled">Submit</button>
+<button type="button" class="btn ItemBtn m-t-10" id="submit-btn" onclick="saveMarketingForm()" style="width:100%" disabled="disabled">Submit</button>
 </form>
 </div>
 <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

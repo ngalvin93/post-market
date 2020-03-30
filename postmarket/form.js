@@ -168,25 +168,120 @@ function GetTotal() {
 
 function saveMarketingForm() {
 
-    var postData = {
-        firstname: $("#first-name").val(),
-        lastname: $("#last-name").val(),
-        email: $("#email").val(),
-        phone: $("#phone").val(),
-        businessname: $("#business-name").val(),
-        stall: $("#stall-number").val(),
-        from: $("#select-form").val(),
-        price: parseFloat($("#amountTotal").val().replace(/,/g, '')),
-        itemlist:itemList,
-        filelist: fileList
+    var OperatingHours=[];
+
+
+    if($("#Sunday").attr("src")=="img/open.png") {
+        OperatingHours.push({"Day": "Sunday", "Status": true, "Start": $("#SundayStartInput").val(), "End": $("#SundayEndInput").val()});
     }
+    else{
+        OperatingHours.push({"Day": "Sunday", "Status": false, "Start": "", "End": ""});
+    }
+
+
+    if($("#Monday").attr("src")=="img/open.png") {
+        OperatingHours.push({"Day": "Monday", "Status": true, "Start": $("#MondayStartInput").val(), "End": $("#MondayEndInput").val()});
+    }
+    else{
+        OperatingHours.push({"Day": "Monday", "Status": false, "Start": "", "End": ""});
+    }
+
+
+    if($("#Tuesday").attr("src")=="img/open.png") {
+        OperatingHours.push({"Day": "Tuesday", "Status": true, "Start": $("#TuesdayStartInput").val(), "End": $("#TuesdayEndInput").val()});
+    }
+    else{
+        OperatingHours.push({"Day": "Tuesday", "Status": false, "Start": "", "End": ""});
+    }
+
+    if($("#Wednesday").attr("src")=="img/open.png") {
+        OperatingHours.push({"Day": "Wednesday", "Status": true, "Start": $("#WednesdayStartInput").val(), "End": $("#WednesdayEndInput").val()});
+    }
+    else{
+        OperatingHours.push({"Day": "Wednesday", "Status": false, "Start": "", "End": ""});
+    }
+
+    if($("#Thursday").attr("src")=="img/open.png") {
+        OperatingHours.push({"Day": "Thursday", "Status": true, "Start": $("#ThursdayStartInput").val(), "End": $("#ThursdayEndInput").val()});
+    }
+    else{
+        OperatingHours.push({"Day": "Thursday", "Status": false, "Start": "", "End": ""});
+    }
+
+    if($("#Friday").attr("src")=="img/open.png") {
+        OperatingHours.push({"Day": "Friday", "Status": true, "Start": $("#FridayStartInput").val(), "End": $("#FridayEndInput").val()});
+    }
+    else{
+        OperatingHours.push({"Day": "Friday", "Status": false, "Start": "", "End": ""});
+    }
+
+    if($("#Saturday").attr("src")=="img/open.png") {
+        OperatingHours.push({"Day": "Saturday", "Status": true, "Start": $("#SaturdayStartInput").val(), "End": $("#SaturdayEndInput").val()});
+    }
+    else{
+        OperatingHours.push({"Day": "Saturday", "Status": false, "Start": "", "End": ""});
+    }
+
+
+
+
+
+
+    var postData = {
+        FirstName: $("#first-name").val(),
+        LastName: $("#last-name").val(),
+        Email: $("#email").val(),
+        Phone: $("#phone").val(),
+        BusinessName: $("#business-name").val(),
+        Stall: $("#stall-number").val(),
+        BusinessEmail: $("#bemail").val(),
+        BusinessPone:$("#bphone").val(),
+        Facebook:$("#FacebookInput").val(),
+        Instagram:$("#InstagramInput").val(),
+        Twitter:$("#TwitterInput").val(),
+        Description: $("#businessDescription").val(),
+        Biography: $("#ownerBiography").val(),
+        OperatingHours:OperatingHours
+    }
+
+
+
+    const formData = new FormData();
+
+
+    for (var key in marketingFileList["headshot"]) {
+        var item = marketingFileList["headshot"][key];
+        formData.append("files.Headshot",item.file, item.name)
+    }
+    for (var key in marketingFileList["photograph"]) {
+        var item = marketingFileList["photograph"][key];
+        formData.append("files.Photograph",item.file, item.name)
+    }
+    for (var key in marketingFileList["primary"]) {
+        var item = marketingFileList["primary"][key];
+        formData.append("files.Primary",item.file, item.name)
+    }
+    for (var key in marketingFileList["secondary"]) {
+        var item = marketingFileList["secondary"][key];
+        formData.append("files.Secondary",item.file, item.name)
+    }
+    for (var key in marketingFileList["logos"]) {
+        var item = marketingFileList["logos"][key];
+        formData.append("files.Logos",item.file, item.name)
+    }
+    for (var key in marketingFileList["menu"]) {
+        var item = marketingFileList["menu"][key];
+        formData.append("files.Menu",item.file, item.name)
+    }
+
+    formData.append('data', JSON.stringify(postData));
 
 
     $.ajax({
         type: "POST",
         contentType: false,
         processData: false,
-        url: "http://test.canvashtx.com/marketing-forms",
+        url: "https://admin.posthtx.com/marketing-forms",
         data: formData,
         success: function (data) {
             if (data.result == 1) {
@@ -306,7 +401,9 @@ function saveForm(){
     var itemList=[];
 
     for(var i=0;i<itemIndex;i++) {
-        itemList.push({"Item": $("#itemName" + i).val(), "Price": parseFloat($("#itemAmount" + i).val().replace(/,/g, ''))})
+        if ( $("#itemName" + i).length > 0 ) {
+            itemList.push({"Item": $("#itemName" + i).val(), "Price": parseFloat($("#itemAmount" + i).val().replace(/,/g, ''))})
+        }
     }
 
 
@@ -337,7 +434,7 @@ function saveForm(){
         type: "POST",
         contentType: false,
         processData: false,
-        url: "http://test.canvashtx.com/post-forms",
+        url: "https://admin.posthtx.com/post-forms",
         data: formData,
         success: function (data) {
             if (data.result == 1) {
@@ -373,7 +470,7 @@ $(function(){
     // Amount format
     $('.itemAmountInput').mask("#,##0.00", {reverse: true});
     $('#phone').mask('(000) 000-0000');
-
+    $('#bphone').mask('(000) 000-0000');
 
     $('#customFile').change(function () {
         $.each(this.files, function () {
@@ -401,6 +498,7 @@ $(function(){
     $("#submit-btn").click(function(){
         saveForm();
     })
+
 
     var forms = document.getElementsByClassName('needs-validation');
     var validation = Array.prototype.filter.call(forms, function(form) {
