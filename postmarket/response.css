@@ -1,0 +1,163 @@
+:root {
+    --red: #F54544;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    color: var(--red);
+}
+
+body {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.col-sm {
+    color: white;
+    background-color: green;
+    text-align: center;
+}
+
+
+
+
+.custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid
+{
+    border: 2px solid #F54544;
+    webkit-box-shadow:none;
+    box-shadow:none;
+}
+
+.custom-select.is-invalid:focus, .form-control.is-invalid:focus, .was-validated .custom-select:invalid:focus, .was-validated .form-control:invalid:focus{
+    border: 2px solid #F54544;
+    webkit-box-shadow:none;
+    box-shadow:none;
+}
+
+
+.custom-select.is-valid, .form-control.is-valid, .was-validated .custom-select:valid, .was-validated .form-control:valid{
+    border: 2px solid #F54544;
+    webkit-box-shadow:none;
+    box-shadow:none;
+}
+
+.custom-select.is-valid:focus, .form-control.is-valid:focus, .was-validated .custom-select:valid:focus, .was-validated .form-control:valid:focus{
+    border: 2px solid #F54544;
+    webkit-box-shadow:none;
+    box-shadow:none;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: var(--red) !important;
+}
+
+
+.form-control, .form-control:focus{
+    border: 2px solid #F54544;
+    border-radius: 0px;
+    font-size: 20px;
+    color: #F54544;
+    webkit-box-shadow:none;
+    box-shadow:none;
+}
+
+
+.custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid{
+    border-color:#F54544;
+}
+
+select{
+    height: 46px !important;
+}
+.operatingLabel{
+    line-height: 45px
+}
+
+.operatingImage{
+    width: 90px; cursor: pointer
+}
+
+.uploadBorderTop{
+    border-top: 2px solid #F54544;
+}
+
+.form-group label{
+    font-size: 20px;
+}
+
+.m-t-10{
+    margin-top: 10px;
+}
+
+.list-form-group{
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+.form-control:disabled, .form-control[readonly]{
+    background-color: #ffffff;
+}
+
+.pull-right{
+    float: right;
+    line-height: 65px;
+    margin-right: 20px;
+    font-size: 30px;
+}
+.pull-right-plus{
+    float: right;
+    margin-right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.item-line{
+    font-size: 40px;
+    text-align: center;
+}
+
+.hero-text {
+    padding: 50px 0;
+}
+
+.primary-text {
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    color: var(--red);
+    font-size: 2rem;
+}
+
+.ItemBtn {
+    background: #F54544;
+    color: white;
+    width: 215px;
+    height:65px;
+    border-radius: 0px;
+    font-size: 30px;
+}
+
+.btn.disabled, .btn:disabled{
+    background-color: #87888D;
+}
+
+.btn{
+    height:65px;
+    border-radius: 0px;
+    font-size: 30px;
+}
+
+.uploadItem{
+    color: #F54544;
+    width: 100%;
+}
+
+form{
+    margin-bottom: 50px;
+}
+
+
