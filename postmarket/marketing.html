@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="switch.css"/>
     <link rel="stylesheet" href="https://use.typekit.net/wfm7wrh.css"/>
-    <link rel="stylesheet" href="form.css"/>
+    <link rel="stylesheet" media="screen and (min-width: 1200px)" href="form.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 1199px) and (min-width: 577px)" href="response.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 576px)" href="mobile.css"/>
     <title>POST</title>
 </head>
 <body>
-<div class="col-8">
+<div class="col-md-12 col-sm-12 col-xl-8">
 <h2 class="primary-text hero-text">Submit a set of your marketing materials to fully
     utilize all marketing resources available to our
     tenants. Refer to the Tenant Handbook here for
@@ -52,8 +53,45 @@
         <label for="stall-number">Stall/Kiosk #</label>
         <select class="form-control" id="stall-number">
             <option selected>Choose ...</option>
-            <option>O100</option>
-            <option>O101</option>
+            <option>O1201	South</option>
+            <option>O1203	South</option>
+            <option>O1204	South</option>
+            <option>O1205	South</option>
+            <option>O1206	South</option>
+            <option>O1207	South</option>
+            <option>O1208	South</option>
+            <option>O1209	South</option>
+            <option>O1210	South</option>
+            <option>O1211	South</option>
+            <option>O1212	South</option>
+            <option>O1213	South</option>
+            <option>O1214	South</option>
+            <option>O1215	South</option>
+            <option>O1217	South</option>
+            <option>O1218	South</option>
+            <option>O1220	South</option>
+            <option>O1221	South</option>
+            <option>O1222	South</option>
+            <option>O1224	North</option>
+            <option>O1226	North</option>
+            <option>O1227	North</option>
+            <option>O1228	North</option>
+            <option>O1230	North</option>
+            <option>O1231	North</option>
+            <option>O1232	North</option>
+            <option>O1233	North</option>
+            <option>O1234	North</option>
+            <option>O1235	North</option>
+            <option>O1236	North</option>
+            <option>O1237	North</option>
+            <option>O1238	North</option>
+            <option>O1239	North</option>
+            <option>O1240	North</option>
+            <option>O1242	North</option>
+            <option>O1243	North</option>
+            <option>O1244	North</option>
+            <option>O1245	North</option>
+            <option>O1246	North</option>
         </select>
     </div>
 </div>
@@ -77,10 +115,10 @@
 
 <div class="form-row">
     <div class="form-group col-2">
-        <label style="line-height: 65px">Sunday</label>
+        <label class="operatingLabel">Sunday</label>
     </div>
     <div class="custom-switch col-2">
-        <img src="img/open.png"  id="Sunday" style="width: 130px; cursor: pointer"  onclick="switchButton('Sunday')">
+        <img src="img/open.png" class="operatingImage"  id="Sunday"  onclick="switchButton('Sunday')">
     </div>
     <div class="form-group col-1">
         <label id="Sunday_Status">Open</label>
@@ -196,10 +234,10 @@
 
 <div class="form-row">
     <div class="form-group col-2">
-        <label style="line-height: 65px">Monday</label>
+        <label class="operatingLabel">Monday</label>
     </div>
     <div class="custom-switch col-2">
-        <img src="img/open.png"  id="Monday" style="width: 130px; cursor: pointer"  onclick="switchButton('Monday')">
+        <img src="img/open.png"  id="Monday" class="operatingImage"  onclick="switchButton('Monday')">
     </div>
     <div class="form-group col-1">
         <label id="Monday_Status">Open</label>
@@ -316,10 +354,10 @@
 
 <div class="form-row">
     <div class="form-group col-2">
-        <label style="line-height: 65px">Tuesday</label>
+        <label class="operatingLabel">Tuesday</label>
     </div>
     <div class="custom-switch col-2">
-        <img src="img/open.png"  id="Tuesday" style="width: 130px; cursor: pointer"  onclick="switchButton('Tuesday')">
+        <img src="img/open.png"  id="Tuesday" class="operatingImage"  onclick="switchButton('Tuesday')">
     </div>
     <div class="form-group col-1">
         <label id="Tuesday_Status">Open</label>
@@ -435,10 +473,10 @@
 
 <div class="form-row">
     <div class="form-group col-2">
-        <label style="line-height: 65px">Wednesday</label>
+        <label class="operatingLabel">Wednesday</label>
     </div>
     <div class="custom-switch col-2">
-        <img src="img/open.png"  id="Wednesday" style="width: 130px; cursor: pointer"  onclick="switchButton('Wednesday')">
+        <img src="img/open.png"  id="Wednesday" class="operatingImage"  onclick="switchButton('Wednesday')">
     </div>
     <div class="form-group col-1">
         <label id="Wednesday_Status">Open</label>
@@ -554,10 +592,10 @@
 
 <div class="form-row">
     <div class="form-group col-2">
-        <label style="line-height: 65px">Thursday</label>
+        <label class="operatingLabel">Thursday</label>
     </div>
     <div class="custom-switch col-2">
-        <img src="img/open.png"  id="Thursday" style="width: 130px; cursor: pointer"  onclick="switchButton('Thursday')">
+        <img src="img/open.png"  id="Thursday" class="operatingImage"  onclick="switchButton('Thursday')">
     </div>
     <div class="form-group col-1">
         <label id="Thursday_Status">Open</label>
@@ -673,10 +711,10 @@
 
 <div class="form-row">
     <div class="form-group col-2">
-        <label style="line-height: 65px">Friday</label>
+        <label class="operatingLabel">Friday</label>
     </div>
     <div class="custom-switch col-2">
-        <img src="img/open.png"  id="Friday" style="width: 130px; cursor: pointer"  onclick="switchButton('Friday')">
+        <img src="img/open.png"  id="Friday" class="operatingImage"  onclick="switchButton('Friday')">
     </div>
     <div class="form-group col-1">
         <label id="Friday_Status">Open</label>
@@ -792,10 +830,10 @@
 
 <div class="form-row">
     <div class="form-group col-2">
-        <label style="line-height: 65px">Saturday</label>
+        <label class="operatingLabel">Saturday</label>
     </div>
     <div class="custom-switch col-2">
-        <img src="img/open.png"  id="Saturday" style="width: 130px; cursor: pointer"  onclick="switchButton('Saturday')">
+        <img src="img/open.png"  id="Saturday" class="operatingImage" onclick="switchButton('Saturday')">
     </div>
     <div class="form-group col-1">
         <label id="Saturday_Status">Open</label>
@@ -976,7 +1014,7 @@
 
 <h2 class="primary-text">Upload your marketing assets</h2>
 
-<div class="form-row" style="border-top: 4px solid #F54544;">
+<div class="form-row uploadBorderTop" >
     <div class="form-group col-12 list-form-group">
         <label for="ownerBiography">Owner(s) headshot</label>
 
@@ -1011,7 +1049,7 @@
     </div>
 
 </div>
-<div class="form-row" style="border-top: 4px solid #F54544;">
+<div class="form-row uploadBorderTop">
     <div class="form-group col-12 list-form-group">
         <label for="ownerBiography">Photograph of a dish/product</label>
 
@@ -1044,7 +1082,7 @@
 
     </div>
 </div>
-<div class="form-row" style="border-top: 4px solid #F54544;">
+<div class="form-row uploadBorderTop">
     <div class="form-group col-12 list-form-group">
         <label for="ownerBiography">Primary photograph</label>
 
@@ -1077,7 +1115,7 @@
 
     </div>
 </div>
-<div class="form-row" style="border-top: 4px solid #F54544;">
+<div class="form-row uploadBorderTop">
     <div class="form-group col-12 list-form-group">
         <label for="ownerBiography">Secondary photograph</label>
 
@@ -1110,7 +1148,7 @@
 
     </div>
 </div>
-<div class="form-row" style="border-top: 4px solid #F54544;">
+<div class="form-row uploadBorderTop">
     <div class="form-group col-12 list-form-group">
         <label for="ownerBiography">Logos</label>
 
@@ -1143,7 +1181,7 @@
 
     </div>
 </div>
-<div class="form-row" style="border-top: 4px solid #F54544;">
+<div class="form-row uploadBorderTop" >
     <div class="form-group col-12 list-form-group">
         <label for="ownerBiography">Menu</label>
 
@@ -1176,7 +1214,7 @@
 
     </div>
 </div>
-<div class="form-row" style="border-top: 4px solid #F54544;">
+<div class="form-row uploadBorderTop">
 </div>
 <button type="button" class="btn ItemBtn m-t-10" id="submit-btn" onclick="saveMarketingForm()" style="width:100%" disabled="disabled">Submit</button>
 </form>

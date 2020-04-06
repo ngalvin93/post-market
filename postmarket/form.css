@@ -68,6 +68,16 @@ input:-webkit-autofill:active {
     box-shadow:none;
 }
 
+.operatingImage{
+    width: 130px; cursor: pointer
+}
+.operatingLabel{
+    line-height: 65px
+}
+
+.uploadBorderTop{
+    border-top: 4px solid #F54544;
+}
 
 .custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid{
     border-color:#F54544;

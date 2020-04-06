@@ -6,11 +6,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.typekit.net/wfm7wrh.css">
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" media="screen and (min-width: 1200px)" href="form.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 1199px) and (min-width: 577px)" href="response.css"/>
+    <link rel="stylesheet" media="screen and (max-width: 576px)" href="mobile.css"/>
     <title>POST</title>
 </head>
 <body>
-<div class="col-8">
+<div class="col-sm-12 col-xl-8">
     <h2 class="primary-text hero-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius, lacus at scelerisque
         molestie, enim magna faucibus metus, eget porta elit massa a mi. Ut efficitur porta odio, sed porta nisl
         malesuada quis. Maecenas at est condimentum, cursus felis ac, mattis neque. Praesent tempus elit at consequat
@@ -47,8 +49,45 @@
                 <label for="stall-number">Stall/Kiosk #</label>
                 <select class="form-control" id="stall-number">
                     <option selected>Choose ...</option>
-                    <option>O100</option>
-                    <option>O101</option>
+                    <option>O1201	South</option>
+                    <option>O1203	South</option>
+                    <option>O1204	South</option>
+                    <option>O1205	South</option>
+                    <option>O1206	South</option>
+                    <option>O1207	South</option>
+                    <option>O1208	South</option>
+                    <option>O1209	South</option>
+                    <option>O1210	South</option>
+                    <option>O1211	South</option>
+                    <option>O1212	South</option>
+                    <option>O1213	South</option>
+                    <option>O1214	South</option>
+                    <option>O1215	South</option>
+                    <option>O1217	South</option>
+                    <option>O1218	South</option>
+                    <option>O1220	South</option>
+                    <option>O1221	South</option>
+                    <option>O1222	South</option>
+                    <option>O1224	North</option>
+                    <option>O1226	North</option>
+                    <option>O1227	North</option>
+                    <option>O1228	North</option>
+                    <option>O1230	North</option>
+                    <option>O1231	North</option>
+                    <option>O1232	North</option>
+                    <option>O1233	North</option>
+                    <option>O1234	North</option>
+                    <option>O1235	North</option>
+                    <option>O1236	North</option>
+                    <option>O1237	North</option>
+                    <option>O1238	North</option>
+                    <option>O1239	North</option>
+                    <option>O1240	North</option>
+                    <option>O1242	North</option>
+                    <option>O1243	North</option>
+                    <option>O1244	North</option>
+                    <option>O1245	North</option>
+                    <option>O1246	North</option>
                 </select>
             </div>
         </div>
@@ -111,7 +150,7 @@
             </div>
         </div>
 
-        <button type="button" class="btn ItemBtn m-t-10" id="submit-btn" style="width:100%" disabled="disabled">Submit</button>
+        <button type="button" class="btn ItemBtn m-t-10" id="submit-btn" style="width:100%" disabled="disabled" onclick="saveForm()">Submit</button>
 
     </form>
 </div>
