@@ -28,13 +28,26 @@ function formatFileSize(size) {
 }
 
 function readURL(file) {
-    var extname = extnameFun(file.name).toLowerCase();
-//    if ((extname == 'doc' || extname == 'docx' || extname == 'pdf' || extname == 'jpg' || extname == 'jepg') && file.size < 5 * 1024 * 1024) {
-    if (file.size < 20 * 1024 * 1024) {
-        fileList[idIndex] = {"filename": file.name, file: file, filesize: file.size};
-        $("#uploadFileList").append('<div class="form-control m-t-10" id="fileItem' + idIndex + '">' + file.name + '(' + formatFileSize(file.size) + ')<img src="img/delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeFile(' + idIndex + ')" /></div>');
-        fileCount++;
-        idIndex++;
+
+    var length= Object.keys(fileList).length;
+
+    if(length>1){
+        $("#filemaxFeedback").show();
+        return;
+    }
+    else {
+        $("#filemaxFeedback").hide();
+        var extname = extnameFun(file.name).toLowerCase();
+        if ((extname == 'pdf') && file.size < 5 * 1024 * 1024) {
+            $("#fileFeedback").hide();
+            fileList[idIndex] = {"filename": file.name, file: file, filesize: file.size};
+            $("#uploadFileList").append('<div class="form-control m-t-10" id="fileItem' + idIndex + '">' + file.name + '(' + formatFileSize(file.size) + ')<img src="img/delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeFile(' + idIndex + ')" /></div>');
+            fileCount++;
+            idIndex++;
+        }
+        else {
+            $("#fileFeedback").show();
+        }
     }
 }
 
@@ -64,7 +77,8 @@ function saveForm() {
         $("#last-name").removeClass("is-invalid");
     }
 
-    if($("#email").val().length==0){
+    var myreg = /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+    if($("#email").val().length==0||!myreg.test($("#email").val())){
         $("#email").addClass("is-invalid");
         return false;
     }
@@ -72,12 +86,29 @@ function saveForm() {
         $("#email").removeClass("is-invalid");
     }
 
-    if($("#phone").val().length==0){
-        $("#phone").addClass("is-invalid");
+    if($("#website").val().length==0){
+        $("#website").addClass("is-invalid");
         return false;
     }
     else{
-        $("#phone").removeClass("is-invalid");
+        $("#website").removeClass("is-invalid");
+    }
+    if($("#select-hear").val()=="0"){
+        $("#select-hear").addClass("is-invalid");
+        return false;
+    }
+    else{
+        $("#select-hear").removeClass("is-invalid");
+    }
+
+
+
+    if ($("#terms").is(':checked')) {
+        $("#terms").removeClass('is-invalid');
+    }
+    else{
+        $("#terms").addClass("is-invalid");
+        return false;
     }
 
     var postData = {
@@ -85,7 +116,7 @@ function saveForm() {
         LastName: $("#last-name").val(),
         Email: $("#email").val(),
         Phone: $("#phone").val(),
-        SubjectArea: $("#select-subject-area").val(),
+        SubjectArea: "",
         NameSchool: $("#schoolname").val(),
         Website: $("#website").val(),
         HearUs: $("#select-hear").val()
@@ -108,7 +139,20 @@ function saveForm() {
         url: "https://admin.posthtx.com/super-registers",
         data: formData,
         success: function (data) {
-            window.location.href = "http://test.posthtx.com/superdesignsuperfurniture";
+            $("#thankyou").show();
+            $("#first-name").val("");
+            $("#last-name").val("");
+            $("#email").val("");
+            $("#phone").val("");
+            $("#schoolname").val("");
+            $("#website").val("");
+            $("#select-hear").val("0");
+            $("#uploadFileList").html("");
+
+            fileCount = 0;
+            fileList = {};
+            idIndex = 0;
+            itemIndex = 1;
         },
         error: function (e) {
         }
@@ -117,10 +161,61 @@ function saveForm() {
 
 }
 
+function SubmitEmail() {
+    $.ajax({
+        type: "POST",
+        url: 'https://www.intownhomes.com/GetData/SaveNewletter2.ashx?first=' + '' + '&last=' + '' + '&email=' + $("#newsletter").val() + '&phone=' + '' + '&company=' + '' + '&sqft=&message=',
+        success: function (data) {
+            if (data.result == "1") {
+                $("#newsletter").val("");
+            }
+        },
+        error: function (e) {
+        }
+    });
+}
 
 
 
 function saveContact() {
+    if($("#first-name").val().length==0){
+        $("#first-name").addClass("is-invalid");
+        return false;
+    }
+    else
+    {
+        $("#first-name").removeClass("is-invalid");
+    }
+
+    if($("#last-name").val().length==0){
+        $("#last-name").addClass("is-invalid");
+        return false;
+    }
+    else
+    {
+        $("#last-name").removeClass("is-invalid");
+    }
+
+    var myreg = /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+    if($("#email").val().length==0||!myreg.test($("#email").val())){
+        $("#email").addClass("is-invalid");
+        return false;
+    }
+    else
+    {
+        $("#email").removeClass("is-invalid");
+    }
+
+    if($("#message").val().length==0){
+        $("#message").addClass("is-invalid");
+        return false;
+    }
+    else
+    {
+        $("#message").removeClass("is-invalid");
+    }
+
+
 
     var postData = {
         FirstName: $("#first-name").val(),
@@ -141,7 +236,12 @@ function saveContact() {
         url: "https://admin.posthtx.com/super-contacts",
         data: formData,
         success: function (data) {
-            window.location.href = "http://test.posthtx.com/superdesignsuperfurniture";
+            $("#thankyou").show();
+            $("#first-name").val("");
+            $("#last-name").val("");
+            $("#email").val("");
+            $("#message").val("");
+
         },
         error: function (e) {
         }
@@ -150,17 +250,6 @@ function saveContact() {
 
 }
 
-
-
-
-function validateForm() {
-    if ($("#terms").is(':checked')) {
-        $("#submit-btn").removeAttr('disabled');
-    }
-    else {
-        $("#submit-btn").attr('disabled', 'disabled');
-    }
-}
 
 
 function hideHeaderDiv() {
@@ -183,20 +272,6 @@ $(function () {
         });
     });
 
-
-    var forms = document.getElementsByClassName('needs-validation contactform');
-    var validation = Array.prototype.filter.call(forms, function (form) {
-        form.addEventListener('keyup', function (event) {
-            if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-                $("#submit-btn").attr('disabled', 'disabled');
-            }
-            else {
-                $("#submit-btn").removeAttr('disabled');
-            }
-        }, false);
-    });
 
 
 });
