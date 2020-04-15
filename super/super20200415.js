@@ -93,12 +93,19 @@ function saveForm() {
     else{
         $("#website").removeClass("is-invalid");
     }
-    if($("#select-hear").val()=="0"){
+
+
+    var other = $("#select-hear").val();
+
+    if($("#select-hear").val()=="0"&&$("#other").val().length==0) {
         $("#select-hear").addClass("is-invalid");
         return false;
     }
     else{
         $("#select-hear").removeClass("is-invalid");
+        if($("#select-hear").val()=="0"){
+            other=$("#other").val();
+        }
     }
 
 
@@ -111,6 +118,8 @@ function saveForm() {
         return false;
     }
 
+
+
     var postData = {
         FirstName: $("#first-name").val(),
         LastName: $("#last-name").val(),
@@ -119,7 +128,7 @@ function saveForm() {
         SubjectArea: "",
         NameSchool: $("#schoolname").val(),
         Website: $("#website").val(),
-        HearUs: $("#select-hear").val()
+        HearUs: other
     }
 
     const formData = new FormData();
