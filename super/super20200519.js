@@ -38,7 +38,7 @@ function readURL(file) {
     else {
         $("#filemaxFeedback").hide();
         var extname = extnameFun(file.name).toLowerCase();
-        if ((extname == 'pdf') && file.size < 5 * 1024 * 1024) {
+        if ((extname == 'pdf') && file.size < 20 * 1024 * 1024) {
             $("#fileFeedback").hide();
             fileList[idIndex] = {"filename": file.name, file: file, filesize: file.size};
             $("#uploadFileList").append('<div class="form-control m-t-10" id="fileItem' + idIndex + '">' + file.name + '(' + formatFileSize(file.size) + ')<img src="img/delete.png" style="width: 24px; float: right; cursor: pointer; margin-top:10px" onclick="removeFile(' + idIndex + ')" /></div>');
@@ -61,8 +61,11 @@ function removeFile(index) {
 
 function saveForm() {
 
+    $("#submit-btn").attr("disable","disable");
+
     if($("#first-name").val().length==0){
         $("#first-name").addClass("is-invalid");
+        $("#submit-btn").removeAttr("disable");
         return false;
     }
     else{
@@ -71,6 +74,7 @@ function saveForm() {
 
     if($("#last-name").val().length==0){
         $("#last-name").addClass("is-invalid");
+        $("#submit-btn").removeAttr("disable");
         return false;
     }
     else{
@@ -80,6 +84,7 @@ function saveForm() {
     var myreg = /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
     if($("#email").val().length==0||!myreg.test($("#email").val())){
         $("#email").addClass("is-invalid");
+        $("#submit-btn").removeAttr("disable");
         return false;
     }
     else{
@@ -88,6 +93,7 @@ function saveForm() {
 
     if($("#website").val().length==0){
         $("#website").addClass("is-invalid");
+        $("#submit-btn").removeAttr("disable");
         return false;
     }
     else{
@@ -99,6 +105,7 @@ function saveForm() {
 
     if($("#select-hear").val()=="0"&&$("#other").val().length==0) {
         $("#select-hear").addClass("is-invalid");
+        $("#submit-btn").removeAttr("disable");
         return false;
     }
     else{
@@ -115,8 +122,12 @@ function saveForm() {
     }
     else{
         $("#terms").addClass("is-invalid");
+        $("#submit-btn").removeAttr("disable");
         return false;
     }
+
+
+
 
 
 
@@ -141,12 +152,19 @@ function saveForm() {
 
     formData.append('data', JSON.stringify(postData));
 
+
+
+
     $.ajax({
         type: "POST",
         contentType: false,
         processData: false,
         url: "https://admin.posthtx.com/super-registers",
         data: formData,
+        beforeSend:function()
+        {
+            $('#submit-btn').attr('onclick','javascript:void();');
+        },
         success: function (data) {
             $("#thankyou").show();
             $("#first-name").val("");
@@ -162,8 +180,14 @@ function saveForm() {
             fileList = {};
             idIndex = 0;
             itemIndex = 1;
+            $("#submit-btn").removeAttr("disable");
+
+            $('#submit-btn').attr('onclick','saveForm()');
         },
+
         error: function (e) {
+            $("#submit-btn").removeAttr("disable");
+            $('#submit-btn').attr('onclick','saveForm()');
         }
     });
 
@@ -237,6 +261,9 @@ function saveContact() {
 
 
     formData.append('data', JSON.stringify(postData));
+
+
+
 
     $.ajax({
         type: "POST",
