@@ -123,7 +123,10 @@
     </div>
 </div>
 <div class="selectionDiv">
-    <div class="primary-text" style="margin-top: 200px; margin-bottom: 130px">Register Now</div>
+    <div class="primary-text" style="margin-top: 200px; ">
+        Register Now<br />
+    </div>
+    <div style="color:#FF3829; font-size: 30px; line-height: 30px;margin-bottom: 130px">Submissions have ended</div>
     <div class="row">
         <div class="col-sm-12 col-xl-8">
             <form class="needs-validation">
@@ -254,8 +257,8 @@
                     </div>
                 </div>
 
-                <button type="button" class="btn ItemBtn" id="submit-btn"
-                        style="width:100%; margin-top: 90px; border: 4px solid #0016C1; color: #0016C1"  onclick="saveForm()">Submit
+                <button type="button" class="btn ItemBtn" id="submit-btn" disabled="disabled"
+                        style="width:100%; margin-top: 90px; border: 4px solid #A0A0A0; color: #A0A0A0" >Submit
                 </button>
 
                 <div id="thankyou" class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 20px; display: none">
@@ -382,7 +385,30 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="jquery.mask.min.js"></script>
-<script src="super20200519.js"></script>
+<script src="super20200518.js"></script>
+
+
+<script type="text/javascript">
+    function LoadTaxAccount(){
+        var param= {"Code":"200","UserName":"John","Token":"420e5bd57abc0f9fe35c3cdbd3113b4e","TokenSecret":"e443a3e1b3475d130ecc9be08805f3a1"};
+        $.ajax({
+            type : "POST",
+            contentType: "application/json;charset=UTF-8",
+            url : "http://mapitwebservice.buildersaccess.com/GetTaxAccountByMUD.json",
+            data : JSON.stringify(param),
+            success : function(result) {
+                var aaa=result.List;
+
+                console.log(aaa);
+                console.log(aaa[0]);
+
+
+                for(var i;)
+            }
+        });
+    }
+    LoadTaxAccount();
+</script>
 </body>
 
 </html>
